@@ -28,6 +28,10 @@
   filter: drop-shadow(0 0px 0px rgba(0, 0, 0, 0.576));
 }
 
+.input {
+  width: 60%;
+}
+
 input,
 .bigBtn,
 .alert {
@@ -192,7 +196,41 @@ a:hover {
   }
 
   .title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
+  }
+
+  .navBar {
+    height: 3.5rem;
+  }
+
+  .input,
+  .alert {
+    width: 80%;
+  }
+
+  .bigBtn,
+  input {
+    padding: 0.5rem !important;
+  }
+
+  .fa-solid {
+    display: none;
+  }
+
+  .form {
+    padding: 4rem 0 0 0;
+  }
+
+  .bottom {
+    overflow-x: auto;
+  }
+  .urlDots,
+  .shortUrl {
+    display: inline-block;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

@@ -53,16 +53,16 @@ function Home() {
       <Navbar />
       <div className="top">
         <div className="form">
-          <h1 className="title text-white text-center">
+          <h1 className="title container text-white text-center">
             "ShortURLs" is a free tool to shorten URLs.
           </h1>
-          <h1 className="title text-white text-center mb-4">
+          <h1 className="title container text-white text-center mb-4">
             Create short & memorable links in seconds.
           </h1>
 
           <form onSubmit={formik.handleSubmit}>
             <div className="form-group">
-              <div className="input-group container w-50 mt-2">
+              <div className="input-group input container mt-2">
                 <input
                   id="full"
                   type="text"
@@ -127,7 +127,7 @@ function Home() {
             <thead>
               <tr className="text-center">
                 <th>Full URLs</th>
-                <th>Shrinked URLs</th>
+                <th>Short URLs</th>
                 <th>Clicks</th>
               </tr>
             </thead>
@@ -141,7 +141,7 @@ function Home() {
                     </a>
                   </td>
                   <td className="text-center w-25">
-                    <a href={url.short} target="_blank">
+                    <a className="shortUrl" href={url.short} target="_blank">
                       {`${currentUrl}${url.short}`}
                     </a>
                   </td>

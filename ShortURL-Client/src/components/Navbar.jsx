@@ -1,7 +1,7 @@
 function Navbar() {
   return (
     <div>
-      <nav className="navbar-expand-lg bg-dark navbar-dark ">
+      <nav className="navBar navbar-expand-lg bg-dark navbar-dark ">
         <p className="title navbar-brand text-center pt-3" href="#">
           ShortURLs
         </p>
