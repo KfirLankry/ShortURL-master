@@ -98,11 +98,11 @@ function Home() {
         </div>
         {shortUrl ? (
           <div
-            class="alert mx-auto alert-success w-25 text-center mt-4"
+            class="alert mx-auto alert-success text-center mt-4"
             role="alert"
           >
             <i className="fa-solid fa-link"></i> Your Shrinked link is:{" "}
-            <a href={shortUrl}>{shortUrl}</a>
+            <a href={shortUrl}>{`${currentUrl}${shortUrl}`}</a>
           </div>
         ) : null}
         <div className="ocean">
@@ -133,7 +133,7 @@ function Home() {
                       {url.full}
                     </a>
                   </td>
-                  <td className="text-center">
+                  <td className="text-center w-25">
                     <a href={url.short} target="_blank">
                       {`${currentUrl}${url.short}`}
                     </a>
