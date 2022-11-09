@@ -53,7 +53,7 @@ function Home() {
       <div className="top">
         <div className="form">
           <h1 className="title text-white text-center">
-            "Shrink My Link" is a free tool to shorten URLs.
+            "ShortURLs" is a free tool to shorten URLs.
           </h1>
           <h1 className="title text-white text-center mb-4">
             Create short & memorable links in seconds.
