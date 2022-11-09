@@ -54,7 +54,7 @@ function Home() {
       <div className="top">
         <div className="form">
           <h1 className="title container text-white text-center">
-            "ShortURLs" is a free tool to shorten URLs.
+            "<strong>ShortURLs</strong>" is a free tool to shorten URLs.
           </h1>
           <h1 className="title container text-white text-center mb-4">
             Create short & memorable links in seconds.
@@ -98,13 +98,13 @@ function Home() {
         </div>
         {shortUrl ? (
           <div
-            class="alert mx-auto alert-success text-center mt-4"
+            class="alert mx-auto alert-success text-center mt-2"
             role="alert"
           >
             <i className="fa-solid fa-link"></i> Your Shrinked link is:{" "}
             <a href={shortUrl}>{`${currentUrl}${shortUrl}`}</a>{" "}
             <button
-              className="btn btn-secondary btn-sm mx-2 "
+              className="btn btn-primary btn-sm copyBtn mb-1 mx-2 "
               onClick={() =>
                 navigator.clipboard.writeText(`${currentUrl}${shortUrl}`)
               }

@@ -29,7 +29,7 @@
 }
 
 .input {
-  width: 60%;
+  width: 50%;
 }
 
 input,
@@ -85,7 +85,7 @@ a:hover {
 }
 
 .alert {
-  width: 48rem;
+  width: 49%;
 }
 
 .table {
@@ -196,8 +196,9 @@ a:hover {
   }
 
   .title {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 400;
+    filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.576));
   }
 
   .navBar {
@@ -205,7 +206,8 @@ a:hover {
   }
 
   .input,
-  .alert {
+  .alert,
+  .copyBtn {
     width: 80%;
   }
 
@@ -219,7 +221,7 @@ a:hover {
   }
 
   .form {
-    padding: 4rem 0 0 0;
+    padding: 2rem 0 0 0;
   }
 
   .bottom {
@@ -232,5 +234,9 @@ a:hover {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .top {
+    height: 55vh;
   }
 }
