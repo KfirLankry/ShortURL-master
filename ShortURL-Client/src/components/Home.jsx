@@ -30,7 +30,7 @@ function Home() {
       clicks: 0,
     },
     validationSchema: yup.object({
-      full: yup.string().required("Please Add Url").min(10),
+      full: yup.string().required("Please Add Url").min(8),
       clicks: yup.number().required(),
     }),
     onSubmit: (values) => {
@@ -52,7 +52,7 @@ function Home() {
     <>
       <Navbar />
       <div className="top">
-        <div className="form">
+        <div className="form" data-aos="zoom-in" data-aos-duration="1000">
           <h1 className="title container text-white text-center">
             "<strong>ShortURLs</strong>" is a free tool to shorten URLs.
           </h1>
@@ -65,10 +65,10 @@ function Home() {
               <div className="input-group input container mt-2">
                 <input
                   id="full"
-                  type="text"
+                  type="url"
                   name="full"
                   className="form-control"
-                  placeholder="Paste a Long Url Here.."
+                  placeholder="e.g http://www.a-very-long-url.com"
                   value={formik.values.full}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -109,10 +109,11 @@ function Home() {
                 navigator.clipboard.writeText(`${currentUrl}${shortUrl}`)
               }
             >
-              <i className="fa-solid fa-copy"> </i> Copy to Clipboard
+              <i className="fa-solid fa-copy"> </i> Copy Link
             </button>
           </div>
         ) : null}
+        {/* Wave Animation */}
         <div className="ocean">
           <div className="wave"></div>
           <div className="wave"></div>
@@ -123,7 +124,11 @@ function Home() {
       {/* Table */}
       <div className="bottom container mt-4">
         {urls.length ? (
-          <table className="table mb-5 mx-auto table-bordered table-striped table-responsive">
+          <table
+            className="table mb-5 mt-2 mx-auto table-bordered table-striped table-responsive"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <thead>
               <tr className="text-center">
                 <th>Full URLs</th>
@@ -157,7 +162,7 @@ function Home() {
                 className="text-center mt-3"
                 style={{ color: "rgb(166, 166, 166)" }}
               >
-                <i className="fa-solid fa-circle-exclamation mt-3"></i> There
+                <i className="fa-solid fa-circle-exclamation mt-5"></i> There
                 are no links in here...
               </h5>
             </div>

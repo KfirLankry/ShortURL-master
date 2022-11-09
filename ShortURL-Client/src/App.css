@@ -24,7 +24,7 @@
 }
 
 .err {
-  color: rgb(173, 8, 8);
+  color: #00346f;
   filter: drop-shadow(0 0px 0px rgba(0, 0, 0, 0.576));
 }
 
@@ -89,7 +89,7 @@ a:hover {
 }
 
 .table {
-  box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.12);
 }
 
 .fadeAnimation,
