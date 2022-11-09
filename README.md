@@ -1,6 +1,7 @@
 # ShortURLs
 
-"ShortURLs" is a free tool to shorten URLs Created by: Kfir Lankry.
+"ShortURLs" is a free tool to shorten URLs Created by: Kfir Lankry.  
+Live Web: https://shorturls-app.netlify.app/
 
 ## Project ingredients:
 
