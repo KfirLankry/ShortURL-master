@@ -102,7 +102,7 @@ function Home() {
             role="alert"
           >
             <i className="fa-solid fa-link"></i> Your Shrinked link is:{" "}
-            <a href={shortUrl}>{`${currentUrl}${shortUrl}`}</a>{" "}
+            <a href={shortUrl} target="_blank">{`${currentUrl}${shortUrl}`}</a>{" "}
             <button
               className="btn btn-primary btn-sm copyBtn mb-1 mx-2 "
               onClick={() =>
