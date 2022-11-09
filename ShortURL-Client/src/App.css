@@ -35,6 +35,15 @@ button,
   padding: 0.8rem !important;
 }
 
+/* Add Dots If Link Is Too Long */
+.urlDots {
+  display: inline-block;
+  width: 800px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .form-group {
   display: flex;
   align-items: center;

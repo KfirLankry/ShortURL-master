@@ -128,9 +128,8 @@ function Home() {
               {urls.map((url) => (
                 <tr key={url._id}>
                   <td>
-                    {" "}
                     <a href={url.full} target="_blank">
-                      {url.full}
+                      <span className="urlDots">{url.full}</span>
                     </a>
                   </td>
                   <td className="text-center w-25">
