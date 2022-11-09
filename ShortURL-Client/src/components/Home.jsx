@@ -9,6 +9,7 @@ function Home() {
   const [urls, setUrls] = useState("");
   const [isChanged, setIsChanged] = useState(false);
   const [shortUrl, setShortUrl] = useState(null);
+  const currentUrl = window.location.href;
 
   useEffect(() => {
     //* Getting all Urls From DB
@@ -134,7 +135,7 @@ function Home() {
                   </td>
                   <td className="text-center">
                     <a href={url.short} target="_blank">
-                      {url.short}
+                      {`${currentUrl}${url.short}`}
                     </a>
                   </td>
                   <td className="text-center">{url.clicks}</td>
