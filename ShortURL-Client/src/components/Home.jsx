@@ -74,7 +74,7 @@ function Home() {
                   onBlur={formik.handleBlur}
                 />
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-primary bigBtn"
                   type="submit"
                   disabled={!(formik.isValid && formik.dirty)}
                   id="button-addon2"
@@ -102,7 +102,15 @@ function Home() {
             role="alert"
           >
             <i className="fa-solid fa-link"></i> Your Shrinked link is:{" "}
-            <a href={shortUrl}>{`${currentUrl}${shortUrl}`}</a>
+            <a href={shortUrl}>{`${currentUrl}${shortUrl}`}</a>{" "}
+            <button
+              className="btn btn-secondary btn-sm mx-2 "
+              onClick={() =>
+                navigator.clipboard.writeText(`${currentUrl}${shortUrl}`)
+              }
+            >
+              <i className="fa-solid fa-copy"> </i> Copy to Clipboard
+            </button>
           </div>
         ) : null}
         <div className="ocean">
