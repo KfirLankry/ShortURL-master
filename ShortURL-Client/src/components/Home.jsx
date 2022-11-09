@@ -19,7 +19,7 @@ function Home() {
         setUrls(result.data);
       })
       .catch((err) => {
-        console.log(err);
+        errorMsg("Something went wrong...");
       });
   }, [isChanged]);
 
