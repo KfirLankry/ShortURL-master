@@ -42,6 +42,6 @@ Client Side: VITE_API_BASE_URL
 
 ## Screenshot:
 
-![alt text](https://i.ibb.co/VYtk10n/Capture.png?raw=true)
+![alt text](https://i.ibb.co/cTWwHZw/Capture.png?raw=true)
 
 ---
