@@ -11,7 +11,7 @@ export const getAllUrls = () => {
   return axios.get(`${api}shortUrl`);
 };
 
-// Short URL Care
-export const redirectUrl = (id) => {
-  return axios.get(`${api}shorturl/${id}`);
+// Get Short URL Care
+export const shortUrl = (value) => {
+  return axios.get(`${api}shorturl/${value}`);
 };

@@ -23,25 +23,26 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Checks if url exist + add +1 to clicks Counter + Update the DB
+// Get URL with Parameters
 router.get("/:shortUrl", async (req, res) => {
   try {
+    // Checks if shortURL Exists in DB
     const url = await shortUrlModel.findOne({
       short: req.params.shortUrl,
     });
 
-    // Checks if Url exists or not
+    // If URL dosent exists, sending 404 error
     if (!url) {
       return res.status(404).send();
     }
 
-    // adds +1 to clicks counter
+    // If URL exists, adds +1 to clicks counter
     url.clicks++;
 
     // Saving the changes in DB
     url.save();
 
-    // Redirect the user to the Link
+    // Returning the updated URL
     return res.send(url.full);
   } catch (error) {
     res.status(400).send(error);

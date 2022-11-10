@@ -23,6 +23,7 @@
   font-weight: 700;
 }
 
+/* Input Error Msg */
 .err {
   color: #00346f;
   filter: drop-shadow(0 0px 0px rgba(0, 0, 0, 0.576));
@@ -57,7 +58,6 @@ input,
 thead {
   background-color: #252525;
   color: white;
-  /* border-bottom: 3px black solid; */
 }
 
 .name {
@@ -74,6 +74,7 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Top Section */
 .top {
   height: 50vh;
   background: linear-gradient(
@@ -122,7 +123,7 @@ a:hover {
   align-items: center;
 }
 
-/* waves */
+/* Waves Animation */
 .ocean {
   height: 50px;
   width: 100%;
@@ -186,6 +187,7 @@ a:hover {
   width: 100%;
 }
 
+/* Responsivity Breakpoints */
 @media only screen and (max-width: 767px) {
   * {
     width: 100%;

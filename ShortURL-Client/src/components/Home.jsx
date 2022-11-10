@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { createShortUrl, getAllUrls } from "../services/urlService";
 import { successMsg, errorMsg } from "../services/feedbackService";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 function Home() {
   const [urls, setUrls] = useState("");
@@ -12,7 +13,7 @@ function Home() {
   const currentUrl = window.location.href;
 
   useEffect(() => {
-    //* Getting all Urls From DB
+    //* Getting all Urls From DB white component
     getAllUrls()
       .then((result) => {
         // Sets urls State to Result Data
@@ -34,12 +35,12 @@ function Home() {
       clicks: yup.number().required(),
     }),
     onSubmit: (values) => {
-      // setShortUrl()
       formik.resetForm({ full: "" });
+      // setShortUrl()
       createShortUrl(values)
         .then((result) => {
           setShortUrl(result.data.short);
-          // Updates isChanged Variable and Render the components
+          // Updates isChanged Variable and Render the components with new info
           setIsChanged(!isChanged);
           successMsg("Short URL Was Created!");
         })
@@ -96,9 +97,10 @@ function Home() {
             </div>
           </form>
         </div>
+        {/* Presenting the shortURL below the input */}
         {shortUrl ? (
           <div
-            class="alert mx-auto alert-success text-center mt-2"
+            className="alert mx-auto alert-success text-center mt-3"
             role="alert"
           >
             <i className="fa-solid fa-link"></i> Your Shrinked link is:{" "}
@@ -137,7 +139,7 @@ function Home() {
               </tr>
             </thead>
             <tbody>
-              {/* Mapping all Urls to the table */}
+              {/* Printing all existing Urls to the table */}
               {urls.map((url) => (
                 <tr key={url._id}>
                   <td>
@@ -157,6 +159,7 @@ function Home() {
           </table>
         ) : (
           <>
+            {/* "No Links" Message incase the table is empty */}
             <div className="message">
               <h5
                 className="text-center mt-3"
@@ -169,15 +172,7 @@ function Home() {
           </>
         )}
       </div>
-      <div className="footer pt-1">
-        <span>
-          Developed With{" "}
-          <i style={{ color: "red" }} className="fa-solid fa-heart"></i> By{" "}
-          <a className="text-white" href="mailto:lankrykfir@gmail.com">
-            <span className="name">Kfir Lankry</span>
-          </a>
-        </span>
-      </div>
+      <Footer />
     </>
   );
 }

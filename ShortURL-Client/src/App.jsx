@@ -1,12 +1,7 @@
 import "./App.css";
 import Home from "./components/Home";
 import Landing from "./components/Landing";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useParams,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 function App() {
