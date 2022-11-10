@@ -4,18 +4,21 @@ import { errorMsg } from "../services/feedbackService";
 
 function Landing() {
   const navigate = useNavigate();
+
+  // Store the parameter into variable
   const { shortId } = useParams();
-  // Fetching shortURL Changes from DB and attaching to the current ShortURL
+
+  // Fetching shortURL from DB and attaching to the current ShortURL
   const fetchUrl = async () => await shortUrl(shortId);
 
   fetchUrl()
     // Getting the full Link with Object Destructuring from the Object
     .then(({ data }) => {
-      // Redirecting the page to the full Link
+      // Redirecting the shortURL to Full URL
       window.location.href = data;
     })
     .catch((err) => {
-      errorMsg("Ops.. Something went wrong.");
+      errorMsg("Ops.. Something went wrong...");
       navigate("/");
     });
 

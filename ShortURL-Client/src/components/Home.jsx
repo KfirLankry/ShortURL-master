@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import { useEffect, useState } from "react";
 import * as yup from "yup";
 import { createShortUrl, getAllUrls } from "../services/urlService";
-import { successMsg, errorMsg } from "../services/feedbackService";
+import { successMsg, errorMsg, infoMsg } from "../services/feedbackService";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -11,6 +11,10 @@ function Home() {
   const [isChanged, setIsChanged] = useState(false);
   const [shortUrl, setShortUrl] = useState(null);
   const currentUrl = window.location.href;
+  const copyLink = () => {
+    navigator.clipboard.writeText(`${currentUrl}${shortUrl}`);
+    infoMsg("Link Copied Successfully!");
+  };
 
   useEffect(() => {
     //* Getting all Urls From DB white component
@@ -107,11 +111,9 @@ function Home() {
             <a href={shortUrl} target="_blank">{`${currentUrl}${shortUrl}`}</a>{" "}
             <button
               className="btn btn-primary btn-sm copyBtn mb-1 mx-2 "
-              onClick={() =>
-                navigator.clipboard.writeText(`${currentUrl}${shortUrl}`)
-              }
+              onClick={copyLink}
             >
-              <i className="fa-solid fa-copy"> </i> Copy Link
+              <i className="fa-solid fa-copy copyBtn"> </i> Copy Link
             </button>
           </div>
         ) : null}
@@ -143,8 +145,8 @@ function Home() {
               {urls.map((url) => (
                 <tr key={url._id}>
                   <td>
-                    <a href={url.full} target="_blank">
-                      <span className="urlDots">{url.full}</span>
+                    <a className="urlDots" href={url.full} target="_blank">
+                      {url.full}
                     </a>
                   </td>
                   <td className="text-center w-25">

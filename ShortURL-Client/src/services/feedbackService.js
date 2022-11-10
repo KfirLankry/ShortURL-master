@@ -8,7 +8,7 @@ export const successMsg = (message) => {
     autoClose: 3000,
     hideProgressBar: false,
     closeOnClick: true,
-    pauseOnHover: true,
+    pauseOnHover: false,
     draggable: true,
     progress: undefined,
   });
@@ -21,7 +21,20 @@ export const errorMsg = (message) => {
     autoClose: 3000,
     hideProgressBar: false,
     closeOnClick: true,
-    pauseOnHover: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+  });
+};
+
+// Info Message
+export const infoMsg = (message) => {
+  toast.info(message, {
+    position: "top-center",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
     draggable: true,
     progress: undefined,
   });

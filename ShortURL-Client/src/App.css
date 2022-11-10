@@ -43,7 +43,7 @@ input,
 /* Add Dots If Link Is Too Long */
 .urlDots {
   display: inline-block;
-  width: 800px;
+  width: 700px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -89,7 +89,8 @@ a:hover {
   width: 49%;
 }
 
-.table {
+.table,
+.copyBtn {
   box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.12);
 }
 

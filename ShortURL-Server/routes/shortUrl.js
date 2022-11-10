@@ -5,15 +5,15 @@ const shortUrlModel = require("../models/ShortUrlModel");
 // Create URL
 router.post("/", async (req, res) => {
   try {
-    await shortUrlModel.create(req.body, (error, data) => {
-      res.status(201).send(data);
-    });
+    let url = new shortUrlModel(req.body);
+    await url.save();
+    res.status(201).send(url);
   } catch (error) {
     res.status(400).send(error);
   }
 });
 
-// Get All Urls
+// Get All URLS from DB
 router.get("/", async (req, res) => {
   try {
     let urls = await shortUrlModel.find();
@@ -23,7 +23,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Get URL with Parameters
+// Get Current Short URL and add +1 to clicks
 router.get("/:shortUrl", async (req, res) => {
   try {
     // Checks if shortURL Exists in DB
@@ -42,7 +42,7 @@ router.get("/:shortUrl", async (req, res) => {
     // Saving the changes in DB
     url.save();
 
-    // Returning the updated URL
+    // Returning the Full URL
     return res.send(url.full);
   } catch (error) {
     res.status(400).send(error);
