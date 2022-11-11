@@ -189,7 +189,7 @@ a:hover {
 }
 
 /* Responsivity Breakpoints */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   * {
     width: 100%;
   }
@@ -233,7 +233,7 @@ a:hover {
   .urlDots,
   .shortUrl {
     display: inline-block;
-    width: 120px;
+    width: 140px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
