@@ -18,8 +18,8 @@ function Landing() {
       window.location.href = data;
     })
     .catch((err) => {
-      // errorMsg("Ops.. Something went wrong...");
-      // navigate("/");
+      errorMsg("Ops.. Something went wrong...");
+      navigate("/");
     });
 
   return <></>;
