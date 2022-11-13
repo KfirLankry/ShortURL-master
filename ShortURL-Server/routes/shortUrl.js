@@ -33,7 +33,7 @@ router.get("/:shortUrl", async (req, res) => {
 
     // If URL dosent exists, sending 404 error
     if (!url) {
-      return res.status(404).send();
+      return res.status(404).send("Something went wrong...");
     }
 
     // If URL exists, adds +1 to clicks counter

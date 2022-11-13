@@ -12,6 +12,6 @@ export const getAllUrls = () => {
 };
 
 // Get Short URL Care
-export const shortUrl = (value) => {
+export const paramsHandler = (value) => {
   return axios.get(`${api}shorturl/${value}`);
 };

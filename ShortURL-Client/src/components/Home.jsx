@@ -129,7 +129,7 @@ function Home() {
       <div className="bottom container mt-4">
         {urls.length ? (
           <table
-            className="table mb-5 mt-2 mx-auto table-bordered table-striped table-responsive"
+            className="table mb-5 mt-2 mx-auto table-bordered table-striped table-responsive table-hover"
             data-aos="fade-up"
             data-aos-duration="1000"
           >

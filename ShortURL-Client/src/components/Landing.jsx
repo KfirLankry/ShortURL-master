@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { shortUrl } from "../services/urlService";
+import { paramsHandler } from "../services/urlService";
 import { errorMsg } from "../services/feedbackService";
 
 function Landing() {
@@ -9,7 +9,7 @@ function Landing() {
   const { shortId } = useParams();
 
   // Fetching shortURL from DB and attaching to the current ShortURL
-  const fetchUrl = async () => await shortUrl(shortId);
+  const fetchUrl = async () => await paramsHandler(shortId);
 
   fetchUrl()
     // Getting the full Link with Object Destructuring from the Object
@@ -18,8 +18,8 @@ function Landing() {
       window.location.href = data;
     })
     .catch((err) => {
-      errorMsg("Ops.. Something went wrong...");
-      navigate("/");
+      // errorMsg("Ops.. Something went wrong...");
+      // navigate("/");
     });
 
   return <></>;
