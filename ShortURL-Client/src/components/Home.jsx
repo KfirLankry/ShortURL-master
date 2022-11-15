@@ -70,7 +70,7 @@ function Home() {
               <div className="input-group input container mt-2">
                 <input
                   id="full"
-                  type="text"
+                  type="url"
                   name="full"
                   className="form-control"
                   placeholder="e.g http://www.a-very-long-url.com"
